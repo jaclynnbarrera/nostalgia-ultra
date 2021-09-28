@@ -15,10 +15,7 @@ export default function Mercury() {
       .then((r) => mercuryMesssage(r.is_retrograde));
   }
 
-  function mercuryMesssage(value) {
-    console.log(value);
-    console.log("in mercury message function");
-  }
+  function mercuryMesssage(value) {}
 
   return (
     <Draggable>

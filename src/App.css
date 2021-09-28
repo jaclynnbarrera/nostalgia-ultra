@@ -15,5 +15,8 @@
 }
 
 .mercury-box {
-  line-height: 2%;
+  line-height: 1%;
+  background-color: lightcoral;
+  padding-left: 10px;
+  padding-right: 10px;
 }
