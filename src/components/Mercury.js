@@ -1,21 +1,29 @@
 import Draggable from "react-draggable";
+import React, { useEffect } from "react";
 
 export default function Mercury() {
   const date = new Date();
-  console.log(date.toISOString().split("T")[0]);
+  const today = new Date(date);
+
+  useEffect(() => {
+    fetchMercury();
+  });
 
   function fetchMercury() {
     fetch(`https://mercuryretrogradeapi.com?date=${date}`)
       .then((response) => response.json())
-      .then((r) => console.log(r));
+      .then((r) => mercuryMesssage(r.is_retrograde));
   }
 
-  fetchMercury();
+  function mercuryMesssage(value) {
+    console.log(value);
+    console.log("in mercury message function");
+  }
 
   return (
     <Draggable>
-      <div className="mercury">
-        <p>today is </p>
+      <div className="mercury-box">
+        <p>Today is {today.toDateString()}</p>
         <p>Is Mercury In Retrograde? 🌙</p>
       </div>
     </Draggable>
