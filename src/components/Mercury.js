@@ -5,8 +5,13 @@ export default function Mercury() {
   console.log(date.toISOString().split("T")[0]);
 
   function fetchMercury() {
-    fetch("");
+    fetch(`https://mercuryretrogradeapi.com?date=${date}`)
+      .then((response) => response.json())
+      .then((r) => console.log(r));
   }
+
+  fetchMercury();
+
   return (
     <Draggable>
       <div className="mercury">
